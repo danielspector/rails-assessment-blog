@@ -1,0 +1,38 @@
+Questions to be answered in the assesment.txt file.
+
+How does rails communicate with the database?  Please be thorough in discussing all the config files and pieces of rails necessary to communicate with the database.
+
+Rails communicates with the database through activerecord. Active Record is a gem created by DHH. Active Record will read from your database.yml and set your database driver. It interacts in the sqlite3 gem to interact with a sqlite3 database. Your migrations set the structure of your database and your models set your associations.
+
+What is a resource?
+
+A resource is an object that has type, data and relations to other resources. It can be acted upon via REST.
+
+What are the standard RESTful routes for a resource?
+GET /posts
+POST /posts
+GET /posts/new
+GET /posts/1
+GET /posts/1/edit
+PATCH /posts/1
+DELETE /posts/1
+
+What is CRUD?
+Create, Read, Update, Delete
+
+What is REST?
+
+REST is a way of creating URLs to map your resources. It uses standard HTTP verbs to implement CRUD actions.
+
+What is the difference between CRUD and REST?
+
+CRUD is the behavior triggered by the URLs generated in the pattern determined by REST.
+
+Describe the flow of a request from a users browser through the rails stack and back.
+
+The browser requests a URL which is sent to the Rails Router(unless it goes to the public folder which is directly served). The router decides which controller and action the request should be sent to. The controller action will often call a model to retrieve data from the database. The controller will then pass that database information to the view which is rendered to the user in the browser.
+
+What are HTTP verbs?
+GET, POST, PUT, PATCH, DELETE
+
+Why do we use migrations.
